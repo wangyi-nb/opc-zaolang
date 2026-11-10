@@ -1,0 +1,85 @@
+/* OPC STARTER CAMP / 浏览器视觉增强。文章信息必须保持可见，不依赖该文件。 */
+:root { color-scheme: light; --ink:#182951; --blue:#2550d9; --orange:#ff7c4f; --cream:#fff9ef; }
+html { scroll-behavior:smooth; }
+body { background:#d9def2!important; }
+.opc-page { position:relative; isolation:isolate; box-shadow:0 28px 90px rgba(28,41,102,.16); }
+/* 微颗粒背景：细微装饰，不以它承载文字 */
+.opc-grain { position:relative; isolation:isolate; }
+.opc-grain::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.19; background-image:repeating-radial-gradient(circle at 22% 33%,rgba(23,38,91,.24) 0 .55px,transparent .8px 3.6px); background-size:5px 5px; }
+/* 视觉封面：图片的圆弧与叠层文案 */
+.opc-hero { position:relative; isolation:isolate; overflow:hidden; background:#2043cc; }
+.opc-hero::before { content:""; position:absolute; z-index:-1; width:360px; height:360px; left:-190px; top:160px; border-radius:50%; background:rgba(255,166,89,.65); filter:blur(70px); pointer-events:none; }
+.opc-hero-media { display:block; width:100%; border-radius:0 0 48% 8% / 0 0 10% 4%; }
+.opc-hero-panel { position:relative; z-index:1; margin:-32px 18px 26px; padding:25px 24px 26px; border-radius:27px 9px 30px 9px; color:#fff; background:#2349ce; background:linear-gradient(120deg,rgba(36,77,216,.92),rgba(36,52,147,.88)); border:1px solid rgba(255,255,255,.34); box-shadow:0 18px 36px rgba(17,25,102,.22); }
+.opc-kicker { display:inline-block; color:#fff; font-weight:800; font-size:11px; letter-spacing:.13em; border:1px solid rgba(255,255,255,.45); border-radius:99px; padding:6px 11px; }
+.opc-hero-title { margin:15px 0 0; color:white; font-size:clamp(37px,9vw,61px); line-height:1.15; font-weight:900; letter-spacing:-.02em; }
+.opc-hero-title em { font-style:normal; color:#ffdf7e; }
+.opc-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.opc-meta span,.opc-pill { display:inline-block; border-radius:999px; padding:6px 11px; color:#fff; font-size:11px; font-weight:700; line-height:1.4; background:rgba(255,255,255,.17); border:1px solid rgba(255,255,255,.3); }
+.opc-meta .opc-accent { background:#ffdc74; border-color:#ffdc74; color:#26336e; }
+/* 圆角轮廓、错层浅景深，渐变 / 毛玻璃具备纯色兜底 */
+.opc-glass { background:#eef1ff; background:rgba(255,255,255,.75); border:1px solid rgba(255,255,255,.82); box-shadow:0 15px 40px rgba(29,49,128,.11); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+.opc-intro { position:relative; padding:49px 28px 36px; text-align:center; background:#fffaf1; }
+.opc-intro::after { content:"✳"; position:absolute; right:7%; top:25px; color:#ffbf66; font-size:25px; transform:rotate(18deg); }
+.opc-intro-title { margin:0; color:#172c67; font-size:25px; line-height:1.55; font-weight:900; }
+.opc-intro-title em { color:#eb6c43; font-style:normal; }
+.opc-intro p { line-height:2; }
+.opc-note { margin:25px 0 0; padding:19px 20px; text-align:left; border-radius:8px 30px 8px 28px; background:linear-gradient(125deg,#fff1c5,#ffd5be); box-shadow:inset 0 1px rgba(255,255,255,.7); }
+.opc-note strong { color:#1d3678; }
+/* 图文错层：图片大圆角 / 标签轻微旋转，不能用于承载关键信息 */
+.opc-scene { position:relative; padding:12px 18px 42px; background:#fffaf1; }
+.opc-scene img { display:block; width:100%; border-radius:36px 8px 36px 8px; }
+.opc-sticker { position:absolute; z-index:2; top:0; right:26px; padding:8px 15px; border-radius:100px; background:#ffdc65; color:#243977; font-weight:900; font-size:11px; letter-spacing:.09em; transform:rotate(5deg); box-shadow:0 5px 14px rgba(70,68,34,.16); }
+.opc-scene-caption { position:relative; width:78%; margin:-20px auto 0; padding:16px 18px; border-radius:18px; text-align:center; color:#263c7c; font-size:13px; line-height:1.8; }
+/* 赛道的有机上缘与照片内容衔接 */
+.opc-track { position:relative; overflow:hidden; padding:48px 25px 32px; }
+.opc-track-live { background:#ffecdf; border-radius:12% 0 0 0 / 2% 0 0 0; }
+.opc-track-global { background:#eaf3ff; border-radius:0 12% 0 0 / 0 2% 0 0; }
+.opc-track-tag { display:inline-block; padding:6px 12px; border-radius:99px; color:#a84024; background:#ffe0ce; border:1px solid #eab49a; font-weight:900; letter-spacing:.12em; font-size:11px; }
+.opc-track-global .opc-track-tag { color:#275abe; background:#d8e8ff; border-color:#b7cef3; }
+.opc-track-title { margin:16px 0; font-size:29px; line-height:1.42; font-weight:900; color:#1b2c60; }
+.opc-track-title em { color:#ef7046; font-style:normal; }
+.opc-track-global .opc-track-title em { color:#2d64d3; }
+.opc-track-copy { color:#4d586d; font-size:15px; line-height:2; }
+.opc-track-image-wrap { padding:0 14px; background:inherit; }
+.opc-track-image { display:block; width:100%; height:auto; border-radius:38px 8px 38px 8px; }
+.opc-route { padding:20px 22px; margin:24px 0 0; border-radius:10px 27px 10px 27px; background:rgba(255,255,255,.75); box-shadow:0 12px 28px rgba(66,57,91,.08); }
+.opc-route-item { padding:11px 0; color:#35446a; line-height:1.8; font-size:14px; border-bottom:1px solid rgba(112,128,169,.24); }
+.opc-route-item:last-child { border-bottom:0; }
+.opc-route-item b { color:#f06e40; }
+.opc-track-global .opc-route-item b { color:#2f64cb; }
+/* 实拍图：横向滑动是浏览器预览功能，微信发布端应另行验收 */
+.opc-gallery { padding:43px 0 42px; background:#fffaf1; overflow:hidden; }
+.opc-gallery-head { padding:0 26px 20px; }
+.opc-gallery-head small { display:block; color:#e96a3e; letter-spacing:.16em; font-weight:800; }
+.opc-gallery-head h2 { margin:10px 0 7px; color:#1c3068; font-size:26px; line-height:1.4; }
+.opc-gallery-head p { margin:0; color:#7d8798; font-size:12px; }
+.opc-slider { display:flex; gap:14px; padding:4px 24px 20px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:#ffab7f transparent; }
+.opc-slide { flex:0 0 84%; min-width:0; scroll-snap-align:center; padding:9px 9px 16px; border-radius:24px 8px 24px 8px; background:white; box-shadow:0 12px 26px rgba(44,51,97,.1); }
+.opc-slide img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:17px 5px 17px 5px; }
+.opc-slide p { margin:12px 7px 0; color:#354566; font-size:13px; line-height:1.7; }
+.opc-gallery-foot { margin:0 26px; color:#8692a2; font-size:11px; line-height:1.7; }
+/* 神秘嘉宾卡：图像概念化呈现而非真实肖像 */
+.opc-mentors { position:relative; overflow:hidden; padding:48px 24px 44px; color:white; background:#1c388f; background:linear-gradient(145deg,#193581,#282ca8 70%,#3f48d5); border-radius:10% 0 0 0 / 3% 0 0 0; }
+.opc-mentors::before { content:""; position:absolute; width:230px; height:230px; top:-110px; right:-90px; border:1px solid rgba(255,255,255,.3); border-radius:50%; box-shadow:0 0 0 35px rgba(255,255,255,.04),0 0 0 70px rgba(255,255,255,.03); }
+.opc-mentors h2 { position:relative; margin:12px 0; font-size:28px; line-height:1.45; }
+.opc-mentors-sub { position:relative; color:#e2e9ff; font-size:14px; line-height:1.9; }
+.opc-mentor { position:relative; display:flex; align-items:center; gap:16px; margin-top:14px; padding:15px; border-radius:24px 8px 24px 8px; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.28); }
+.opc-avatar { flex:0 0 86px; width:86px; height:106px; overflow:hidden; border-radius:46% 46% 14px 14px; background:rgba(255,255,255,.2); }
+.opc-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+.opc-mentor-copy { min-width:0; flex:1; }
+.opc-mentor-copy small { color:#ffe09a; font-size:10px; font-weight:800; letter-spacing:.06em; }
+.opc-mentor-copy h3 { margin:6px 0; font-size:18px; line-height:1.4; }
+.opc-mentor-copy p { margin:0; color:#e4eaff; font-size:12px; line-height:1.75; }
+/* 底部报名区 */
+.opc-event { position:relative; padding:42px 25px; overflow:hidden; color:#182c61; background:#ffcc66; background:linear-gradient(130deg,#ffd66e,#ffae82); border-radius:0 12% 0 0 / 0 3% 0 0; }
+.opc-event h2 { margin:12px 0 20px; font-size:29px; line-height:1.4; }
+.opc-event-row { position:relative; padding:13px 0; border-top:1px solid rgba(124,76,30,.28); font-size:15px; line-height:1.8; }
+.opc-event-row small { display:block; color:#9a5933; letter-spacing:.12em; font-size:10px; font-weight:800; }
+.opc-cta { text-align:center; padding:42px 24px 48px; background:#fff9ef; }
+.opc-cta h2 { margin:0 0 12px; color:#1b2d69; font-size:27px; line-height:1.5; }
+.opc-cta-mark { display:inline-block; margin-top:20px; border-radius:999px; padding:12px 25px; background:#2048c7; color:white; font-size:15px; font-weight:800; box-shadow:0 8px 0 #fdbd75; }
+.opc-qr { display:flex; width:150px; height:150px; margin:24px auto 10px; justify-content:center; align-items:center; border-radius:20px; border:1px dashed #9eabd0; background:#f4f5fa; color:#8692a9; font-size:13px; line-height:1.8; }
+@media (min-width:681px) { .opc-page { margin:25px auto!important; border-radius:30px; } }
+@media (max-width:360px) { .opc-hero-panel { margin-left:14px; margin-right:14px; padding:22px 20px; } .opc-track-title { font-size:26px; } .opc-mentor { gap:12px; } .opc-avatar { flex-basis:72px; width:72px; height:96px; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
