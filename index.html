@@ -14,7 +14,9 @@
 
 <style>
 :root{color-scheme:light} html{scroll-behavior:smooth} body{background:#e6edfa!important} .article-shell{position:relative;isolation:isolate;background:#fffaf1!important;box-shadow:0 18px 60px rgba(20,48,113,.18)}
-.article-shell img{max-width:100%}.article-shell p{word-break:normal}.cover{position:relative;overflow:hidden;background:radial-gradient(ellipse at 86% 14%,#7cafff 0%,transparent 35%),linear-gradient(145deg,#134fd9 0%,#1734a0 70%,#331b8e 100%);padding:18px 18px 42px;color:#fff}
+.article-shell img{max-width:100%}
+/* 内联 width/height 属性会导致固定高度，这里统一还原等比缩放 */
+.cover-art img,.scenario-image img,.image-cut img,.global-cut img,.guest-visual{height:auto}.article-shell p{word-break:normal}.cover{position:relative;overflow:hidden;background:radial-gradient(ellipse at 86% 14%,#7cafff 0%,transparent 35%),linear-gradient(145deg,#134fd9 0%,#1734a0 70%,#331b8e 100%);padding:18px 18px 42px;color:#fff}
 .cover:before,.wash:before{content:"";pointer-events:none;position:absolute;inset:0;opacity:.18;background-image:radial-gradient(#fff 0.7px,transparent .8px);background-size:5px 5px;mix-blend-mode:soft-light}
 .cover-top{position:relative;display:flex;justify-content:space-between;align-items:center;padding:2px 4px 15px;font-size:10px;letter-spacing:1.5px;color:#fff;font-weight:700}.cover-top .top-pill{padding:6px 10px;border:1px solid #ffffff70;border-radius:99px;background:#ffffff20}
 .cover-art{position:relative;overflow:hidden;border-radius:28px 28px 110px 27px;box-shadow:0 20px 45px #111b744d}.cover-art img{width:100%;display:block}.cover-art:after{content:"";position:absolute;inset:32% 0 0;background:linear-gradient(0deg,rgba(8,25,100,.72),transparent 66%);pointer-events:none}
